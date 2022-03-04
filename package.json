@@ -9,6 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
-  }
+    "express": "^4.17.3",
+    "uniqid": "^5.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LumberJon1/Duly-Noted.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/LumberJon1/Duly-Noted/issues"
+  },
+  "homepage": "https://github.com/LumberJon1/Duly-Noted#readme"
 }
