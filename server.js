@@ -1,7 +1,7 @@
-const express = require('express');
-const path = require('path');
-const fs = require('fs');
-const uid = require('.uniqid');
+const express = require("express");
+const path = require("path");
+const fs = require("fs");
+const uid = require("uniqid");
 
 const PORT = 3001;
 
@@ -20,11 +20,13 @@ app.get('/', (req, res) =>
 //Get route for notes HTML page
 app.get("/notes", (req, res) => {
     console.log("Received a get request for the /notes page");
+    res.sendFile(path.join(__dirname, "/public/notes.html"))
 });
 
 //Get route for the api
 app.get("/api/notes", (req, res) => {
-    console.log("Received a get request for the api/notes page");
+    console.log("Received a get request for the api/notes page.  Sending db.json");
+    res.sendFile(path.join(__dirname, "/db/db.json"));
 });
 
 //Post route for the api notes page
@@ -35,6 +37,7 @@ app.post("/api/notes", (req, res) => {
 //Catch-all route to serve the home page
 app.get("*", (req, res) => {
     console.log("got an unexpected endpoint");
+    res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
 app.listen(PORT, () => console.log("Listening at port "+PORT));
