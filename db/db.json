@@ -1,57 +1,7 @@
 [
     {
-        "title": "note title",
+        "title": "Example Note",
         "text": "note text",
         "id": "a7jnsl0d802gx"
-    },
-    {
-        "title": "note title",
-        "text": "note text",
-        "id": "a7jnsl0d805me"
-    },
-    {
-        "title": "note title",
-        "text": "note text",
-        "id": "a7jnsl0d806ao"
-    },
-    {
-        "title": "note title",
-        "text": "note text",
-        "id": "a7jnsl0d806ru"
-    },
-    {
-        "title": "note title",
-        "text": "note text",
-        "id": "a7jnsl0d8076o"
-    },
-    {
-        "title": "note title",
-        "text": "note text",
-        "id": "a7jnsl0d807kn"
-    },
-    {
-        "title": "note title",
-        "text": "extra special test 1",
-        "id": "a7izsl0d8uv9a"
-    },
-    {
-        "title": "note title",
-        "text": "extra special test 2",
-        "id": "a7izsl0d8v0wf"
-    },
-    {
-        "title": "note title",
-        "text": "extra special test 3",
-        "id": "a7izsl0d8v3yr"
-    },
-    {
-        "title": "This is a test",
-        "text": "Tests the ability to write to db.json and stuff",
-        "id": "a7jrkl0d9a1b5"
-    },
-    {
-        "title": "new note",
-        "text": "new note test number 2",
-        "id": "a7jrkl0d9ea6m"
     }
 ]
