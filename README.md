@@ -16,5 +16,6 @@ Duly Noted lets you access an express server that loads notes stored in a databa
 ## Deployed Heroku Link
 https://murmuring-sea-55048.herokuapp.com/
 
-## Screenshot
-![screenshot](/)
+## Screenshots
+![screenshot](./public/assets/images/screenshot.JPG)
+![screenshot](./public/assets/images/screenshot2.JPG)
