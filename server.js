@@ -1,7 +1,8 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-const uid = require("uniqid");
+const uniqid = require("uniqid");
+const { title } = require("process");
 
 const PORT = 3001;
 
@@ -32,6 +33,37 @@ app.get("/api/notes", (req, res) => {
 //Post route for the api notes page
 app.post("/api/notes", (req, res) => {
     console.log("Received a post request for the api/notes page");
+
+    let array = [];
+
+    //Assign a unique ID to the note
+    const id = uniqid();
+    console.log("Note ID: "+id);
+
+    //Destructure the body of the request
+    const {title, text} = req.body;
+    console.log({title, text});
+
+    //Get the db.json file
+    fs.readFile(path.join(__dirname, "/db/db.json"), "utf8", (err, data) => {
+        if (err) {
+            throw err;
+        }
+        if (data) {
+            array = JSON.parse(data);
+        }
+        array.push({title, text, id: id});
+        console.log(array);
+
+        fs.writeFileSync(path.join(__dirname, "/db/db.json"), JSON.stringify(array, null, 4), (err) => {
+            if (err) {
+                throw err;
+            }
+            console.log("Successfully wrote array to db.json");
+        });
+    })
+
+    res.send("Successfully wrote the file to db.json!");
 });
 
 //Catch-all route to serve the home page
