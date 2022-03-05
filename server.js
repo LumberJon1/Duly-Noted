@@ -30,6 +30,32 @@ app.get("/api/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "/db/db.json"));
 });
 
+//Get route for a note by ID
+app.get("/api/notes/:id", (req, res) => {
+    //Check to ensure server was supplied valid data
+    if (req.body && req.params.id) {
+        let reqID = req.params.id;
+
+        //Parse through the db.json and find the note ID that matches reqID
+        fs.readFile(path.join(__dirname, "/db/db.json"), "utf8", (err, data) => {
+            if (err) {
+                throw err;
+            }
+            const dbArray = JSON.parse(data);
+            for (let i = 0; i < dbArray.length; i++) {
+                if (dbArray[i].id === reqID) {
+                    console.log("Selected Note "+dbArray[i].id);
+                    res.send(JSON.stringify(dbArray[i]));
+                }
+            }
+        });
+    }
+    else {
+        res.send("Invalid data provided to server.");
+        res.status();
+    }
+})
+
 //Post route for the api notes page
 app.post("/api/notes", (req, res) => {
     console.log("Received a post request for the api/notes page");
